@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titulo": "Dia del Estudiante",
+    "fecha": "21 de Septiembre",
+    "imagen": "assets/dia_del_estudiante.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Día mundial de la Salud Mental",
+    "fecha": "9 de Octubre",
+    "imagen": "assets/dia_salud_mental.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Día de la Tradición",
+    "fecha": "10 de Noviembre",
+    "imagen": "assets/dia_tradicion.jpg"
+  }
+]
