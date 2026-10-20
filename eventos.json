@@ -1,18 +1,24 @@
 [
   {
     "id": 1,
+    "titulo": "Día de la Internet",
+    "fecha": "17 de Mayo",
+    "imagen": "assets/dia_internet.jpg"
+  },
+  {
+    "id": 2,
     "titulo": "Dia del Estudiante",
     "fecha": "21 de Septiembre",
     "imagen": "assets/dia_del_estudiante.jpg"
   },
   {
-    "id": 2,
+    "id": 3,
     "titulo": "Día mundial de la Salud Mental",
     "fecha": "9 de Octubre",
-    "imagen": "assets/dia_salud_mental.jpg"
+    "imagen": "assets/dia_saludmental.png"
   },
   {
-    "id": 3,
+    "id": 4,
     "titulo": "Día de la Tradición",
     "fecha": "10 de Noviembre",
     "imagen": "assets/dia_tradicion.jpg"

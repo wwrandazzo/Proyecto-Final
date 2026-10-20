@@ -1,57 +1,279 @@
-root{
-  --nav-color: rgb(193, 54, 54);
+:root {
+  --nav-color: #a43b32;
+  --nav-color-tablet: #e8eee8;
+  --ink: #252b28;
+  --paper: #f8f7f1;
+  --accent: #e9b64b;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-h1{
-  text-align: center;
-  margin-top: 20px;
+
+body {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
 }
+
+h1 {
+  text-align: center;
+  margin: 36px 16px 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 500;
+}
+
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 30px 20px;
+  padding: 24px 20px;
 }
 
 header nav ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 header nav ul li {
-  display: flex;
   list-style: none;
-  margin-left: 10px;
 }
+
 header nav ul li a {
   text-decoration: none;
   color: var(--nav-color);
-  border: 1px solid gray;
-  padding: 8px 14px;
-  background: white;
+  border-bottom: 1px solid transparent;
+  padding: 8px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
 }
 
-section {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
+header nav ul li a:hover,
+header nav ul li a:focus-visible {
+  border-color: currentColor;
 }
 
-#eventoActual {
-  margin-top: 20px;
+.carousel {
+  width: min(100% - 32px, 900px);
+  margin: 18px auto 48px;
+}
+
+.carousel-viewport {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  min-height: 280px;
+  aspect-ratio: 16 / 8;
+  background: #47635a;
+  color: #fff;
+}
+
+.event-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(24px, 6vw, 56px);
+  background: linear-gradient(transparent, rgb(18 28 23 / 82%));
+}
+
+.event-content h2 {
+  max-width: 700px;
+  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 500;
+}
+
+.event-content p {
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+}
+
+.event-position {
+  margin-top: 18px;
+  color: var(--accent);
+  font-size: 0.85rem !important;
+}
+
+.carousel-message {
+  margin: auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.annual-calendar {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto 64px;
+  scroll-margin-top: 24px;
+}
+
+.annual-calendar-heading {
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--nav-color);
+  padding-bottom: 12px;
+}
+
+.annual-calendar-heading > p {
+  margin-bottom: 4px;
+  color: var(--nav-color);
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.annual-calendar-heading h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.annual-event-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 32px;
+  list-style: none;
+}
+
+.annual-event {
+  display: grid;
+  grid-template-columns: minmax(105px, 0.7fr) minmax(0, 1.5fr);
+  align-items: baseline;
+  gap: 16px;
+  border-bottom: 1px solid #d6d8d2;
+  padding: 16px 0;
+}
+
+.annual-event-date {
+  color: var(--nav-color);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.annual-event h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.annual-event-message {
+  grid-column: 1 / -1;
+  padding: 16px 0;
+  font-family: Arial, sans-serif;
+}
+
+.about-section {
+  background: #47635a;
+  color: #fff;
+  scroll-margin-top: 24px;
+}
+
+.about-content {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+  padding: 48px 0 56px;
+}
+
+.about-kicker {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.about-content h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.about-content > p:last-child {
+  max-width: 650px;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.carousel-controls {
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  background-image: url('assets/dia_del_estudiante.jpg');
-  opacity: 0.8;
-  height: 400px;
-  width: 600px;
-  color: rgb(238, 231, 231);
-  padding: 10px;
+  justify-content: center;
+  gap: 22px;
+  min-height: 72px;
+}
+
+.carousel-arrow,
+.carousel-indicator {
+  display: grid;
+  place-items: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel-arrow {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: var(--nav-color);
+  font-size: 1.5rem;
+}
+
+.carousel-arrow:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.carousel-indicators {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #9ca49e;
+}
+
+.carousel-indicator.is-active {
+  background: var(--nav-color);
+  outline: 3px solid rgb(164 59 50 / 20%);
+}
+
+@media (min-width: 768px) {
+  header {
+    background-color: var(--nav-color-tablet);
+  }
+}
+
+@media (max-width: 520px) {
+  .carousel-viewport {
+    min-height: 340px;
+    aspect-ratio: auto;
+  }
+
+  header nav ul {
+    gap: 4px;
+  }
+
+  header nav ul li a {
+    padding: 8px 6px;
+    font-size: 0.8rem;
+  }
+
+  .annual-event-list {
+    grid-template-columns: 1fr;
+  }
 }

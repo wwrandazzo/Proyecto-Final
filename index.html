@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calendario Escolar 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Calendario Escolar 2026</h1>
+    <h1 class="about-section">Calendario Escolar 2026</h1>
     <header>
         <nav>
             <ul>
-            <li><a href="index.html">Evento Anterior</a></li>
+            <li><a href="#eventoActual" id="navEventoAnterior">Evento Anterior</a></li>
             <li><a href="index.html">Evento Actual</a></li>
-            <li><a href="index.html">Calendario Anual</a></li>
-            <li><a href="index.html">Acerca de Nosotros</a></li>
+            <li><a href="#eventoActual" id="navEventoSiguiente">Evento Siguiente</a></li>
+            <li><a href="#calendarioAnual">Calendario Anual</a></li>
+            <li><a href="#acercaDeNosotros">Acerca de Nosotros</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <div id="eventoActual">
-                <h2>Dia del Estudiante</h2>
-                <h3>21 de Septiembre</h3>
+        <section class="carousel" aria-label="Eventos escolares">
+            <div class="carousel-viewport" id="eventoActual" aria-live="polite" aria-atomic="true">
+                <p class="carousel-message">Cargando eventos...</p>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-arrow" id="eventoAnterior" type="button" aria-label="Evento anterior" disabled>
+                    <span aria-hidden="true">&#8592;</span>
+                </button>
+                <div class="carousel-indicators" id="indicadores" role="group" aria-label="Seleccionar evento"></div>
+                <button class="carousel-arrow" id="eventoSiguiente" type="button" aria-label="Evento siguiente" disabled>
+                    <span aria-hidden="true">&#8594;</span>
+                </button>
+            </div>
+        </section>
+        <section class="annual-calendar" id="calendarioAnual" aria-labelledby="annualCalendarTitle">
+            <div class="annual-calendar-heading">
+                <p>2026</p>
+                <h2 id="annualCalendarTitle">Calendario anual</h2>
+            </div>
+            <ol class="annual-event-list" id="listaEventos" aria-live="polite">
+                <li class="annual-event-message">Cargando eventos...</li>
+            </ol>
+        </section>
+        <section class="about-section" id="acercaDeNosotros" aria-labelledby="aboutTitle">
+            <div class="about-content">
+                <p class="about-kicker">Calendario Escolar 2026</p>
+                <h2 id="aboutTitle">Acerca de nosotros</h2>
+                <p>Este calendario reúne fechas conmemorativas vinculadas a la comunidad educativa propuestas por la escuela.</p>
             </div>
         </section>
     </main>
