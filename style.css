@@ -102,10 +102,99 @@ header nav ul li a:focus-visible {
   font-size: 1.05rem;
 }
 
+.event-detail-link {
+  display: inline-block;
+  margin-top: 18px;
+  border: 1px solid var(--accent);
+  padding: 10px 14px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.event-detail-link:hover,
+.event-detail-link:focus-visible {
+  background: var(--accent);
+  color: var(--ink);
+}
+
 .event-position {
   margin-top: 18px;
   color: var(--accent);
   font-size: 0.85rem !important;
+}
+
+.event-detail {
+  width: min(100% - 32px, 900px);
+  margin: 18px auto 64px;
+}
+
+.event-detail-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  min-height: 300px;
+  aspect-ratio: 16 / 8;
+  background: #47635a;
+  color: #fff;
+}
+
+.event-detail-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-detail-heading {
+  position: relative;
+  width: 100%;
+  padding: clamp(24px, 6vw, 56px);
+  background: linear-gradient(transparent, rgb(18 28 23 / 82%));
+}
+
+.event-detail-heading p {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+}
+
+.event-detail-heading h2 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 500;
+}
+
+.event-detail-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.event-detail-copy h3 {
+  margin: 24px 0 8px;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.event-detail-copy p,
+.event-detail-copy li {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.event-detail-copy ul {
+  padding-left: 22px;
+}
+
+.event-detail-back {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--nav-color);
+  font-family: Arial, sans-serif;
+  font-weight: 700;
 }
 
 .carousel-message {
@@ -260,6 +349,11 @@ header nav ul li a:focus-visible {
 
 @media (max-width: 520px) {
   .carousel-viewport {
+    min-height: 340px;
+    aspect-ratio: auto;
+  }
+
+  .event-detail-hero {
     min-height: 340px;
     aspect-ratio: auto;
   }

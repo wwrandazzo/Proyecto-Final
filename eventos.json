@@ -3,7 +3,8 @@
     "id": 1,
     "titulo": "Día de la Internet",
     "fecha": "17 de Mayo",
-    "imagen": "assets/dia_internet.jpg"
+    "imagen": "assets/dia_internet.jpg",
+    "detalle": "dia-internet.html"
   },
   {
     "id": 2,

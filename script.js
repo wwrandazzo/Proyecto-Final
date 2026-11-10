@@ -30,11 +30,21 @@ function showEvent(index) {
 	const date = document.createElement("p");
 	date.textContent = event.fecha;
 
+	if (event.detalle) {
+		const detailLink = document.createElement("a");
+		detailLink.className = "event-detail-link";
+		detailLink.href = event.detalle;
+		detailLink.textContent = "Conocer más";
+		content.append(title, date, detailLink);
+	} else {
+		content.append(title, date);
+	}
+
 	const position = document.createElement("p");
 	position.className = "event-position";
 	position.textContent = `${activeEventIndex + 1} / ${events.length}`;
 
-	content.append(title, date, position);
+	content.append(position);
 	slideContainer.append(image, content);
 	slideContainer.setAttribute("aria-label", `${event.titulo}, ${event.fecha}`);
 
@@ -110,7 +120,5 @@ async function loadEvents() {
 
 previousButton.addEventListener("click", () => showEvent(activeEventIndex - 1));
 nextButton.addEventListener("click", () => showEvent(activeEventIndex + 1));
-previousLink.addEventListener("click", () => showEvent(activeEventIndex - 1));
-nextLink.addEventListener("click", () => showEvent(activeEventIndex + 1));
 
 loadEvents();
